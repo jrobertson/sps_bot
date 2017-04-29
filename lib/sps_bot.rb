@@ -12,7 +12,8 @@ class SpsBot < SPSChat
                  config: nil, typing_mode: false)
     
     super(host: host, port: port, userid: userid, room: room)
-    @bot = BotBase.new config
+    @bot = BotBaseDRbClient.new host: '192.168.4.195', port: '60600'
+
     @typing_mode = typing_mode
     
   end  
@@ -22,7 +23,7 @@ class SpsBot < SPSChat
     if not typing_mode then
       #msg = 'tim'
       
-      response = @bot.received sender, msg
+      response = @bot.received sender, msg, mode: :chat
     
       self.send response
     end
