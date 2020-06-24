@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'sps_bot'
-  s.version = '0.2.1'
+  s.version = '0.2.2'
   s.summary = 'The sps_bot gem allows you to chat with your very own bot through the sps_chat gem.'
   s.authors = ['James Robertson']
   s.files = Dir['lib/sps_bot.rb']
