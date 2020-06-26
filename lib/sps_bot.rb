@@ -22,11 +22,10 @@ class SpsBot < SPSChat
   def onincoming(sender, msg, typing_mode=false)
     
     if not typing_mode then
-      #msg = 'tim'
       
       response = @bot.received sender, msg, mode: :chat
     
-      self.send response
+      self.send response unless response.empty?
     end
 
   end
