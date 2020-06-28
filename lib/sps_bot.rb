@@ -11,11 +11,11 @@ class SpsBot < SPSChat
   def initialize(host: '127.0.0.1', port: '8080', userid: 'bot', 
                  room: '', config: nil, typing_mode: false, 
                  drb: {host: 'bot.home', port: '60600'})
-    
-    super(host: host, port: port, userid: userid, room: room)
-    @bot = BotBaseDRbClient.new host: drb[:host], port: drb[:port]
 
+    @bot = BotBaseDRbClient.new host: drb[:host], port: drb[:port]    
     @typing_mode = typing_mode
+    super(host: host, port: port, userid: userid, room: room, 
+          interactive: false)
     
   end  
 
